@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "CalorieFit — Track, Eat Better",
+  "short_name": "CalorieFit",
+  "description": "Track calories, meals, macros and health habits.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f9f7",
+  "theme_color": "#14864a",
+  "categories": ["health", "lifestyle", "food"],
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
