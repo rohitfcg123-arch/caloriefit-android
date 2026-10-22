@@ -39,6 +39,15 @@ class MainActivity : ComponentActivity() {
         webView = WebView(this)
         webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
+        webView.settings.useWideViewPort = true
+        webView.settings.loadWithOverviewMode = true
+        webView.settings.setSupportZoom(false)
+        webView.settings.builtInZoomControls = false
+        webView.settings.displayZoomControls = false
+        webView.isVerticalScrollBarEnabled = false
+        webView.overScrollMode = WebView.OVER_SCROLL_NEVER
+        window.statusBarColor = android.graphics.Color.rgb(246, 249, 247)
+        window.navigationBarColor = android.graphics.Color.WHITE
         webView.webChromeClient = WebChromeClient()
         webView.webViewClient = WebViewClient()
         webView.addJavascriptInterface(StepsBridge(), "CalorieFitNative")
