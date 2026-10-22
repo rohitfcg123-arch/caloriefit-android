@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
         @JavascriptInterface
         fun syncTodaySteps() {
             runOnUiThread {
-                val status = HealthConnectClient.getSdkStatus(this@MainActivity)
+                val status = HealthConnectClient.getSdkStatus(this@MainActivity, "com.google.android.apps.healthdata")
                 if (status != HealthConnectClient.SDK_AVAILABLE) {
                     sendStepsError("Health Connect is unavailable or needs an update.")
                     return@runOnUiThread
