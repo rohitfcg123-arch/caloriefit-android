@@ -56,6 +56,44 @@ button,.btn{max-width:100%;overflow-wrap:anywhere}
  .hero h2{font-size:22px}
 }
 
+
+/* Mobile layout polish: keep the app inside the viewport and prevent auth/nav overlap. */
+@media(max-width:780px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  .main{width:100%;min-width:0;padding-left:12px;padding-right:12px;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+  .topbar{width:100%;min-width:0;gap:6px;overflow:hidden}
+  .mobile-head{flex:1;min-width:0;white-space:nowrap;font-size:16px;gap:6px}
+  .mobile-head .leaf{flex:0 0 30px}
+  .crumb{display:none}
+  .top-actions{flex:0 0 auto;gap:5px}
+  .top-actions .icon-button{width:34px;height:36px;flex:0 0 34px}
+  #loginTopBtn{padding:8px 10px;font-size:12px;white-space:nowrap}
+  .avatar{width:32px;height:32px;flex:0 0 32px}
+  .page{width:100%;min-width:0}
+  .page>*{min-width:0;max-width:100%}
+  .page .card{overflow-wrap:anywhere}
+  .page > div[style*="max-width:500px"]{width:100%;max-width:500px!important;margin:8px auto 16px!important;padding:0!important}
+  .page > div[style*="max-width:500px"] > .card{padding:clamp(16px,4vw,24px)!important;border-radius:18px}
+  #authForm input{min-width:0;width:100%;font-size:16px}
+  #authForm button,.page [data-auth-google],.page [data-action="reset-password"]{min-height:46px}
+  .page h1{font-size:clamp(22px,6vw,29px)!important;line-height:1.15;overflow-wrap:anywhere}
+  .page .tabs{max-width:100%;gap:4px}
+  .page .tabs button{padding:10px 12px;flex:1}
+  .footer-note{margin:14px 0 8px;padding:0 4px;font-size:11px;line-height:1.5}
+  .bottom-nav{padding-top:6px;padding-bottom:calc(6px + env(safe-area-inset-bottom))}
+  .bottom-nav button{min-width:0;flex:1}
+  body:has(#authForm) .bottom-nav{display:none}
+  body:has(#authForm) .main{padding-bottom:16px}
+}
+@media(max-width:390px){
+  .main{padding-left:9px;padding-right:9px}
+  .mobile-head{font-size:14px}
+  .top-actions{gap:3px}
+  .top-actions .icon-button{width:30px;flex-basis:30px}
+  #loginTopBtn{padding:7px 8px;font-size:11px}
+  .page > div[style*="max-width:500px"] > .card{padding:15px!important}
+}
+
 </style>
 </head>
 <body>
