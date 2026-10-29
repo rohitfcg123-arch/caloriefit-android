@@ -12,6 +12,8 @@
     <application
         android:allowBackup="true"
         android:label="CalorieFit"
+        android:icon="@drawable/ic_caloriefit"
+        android:roundIcon="@drawable/ic_caloriefit"
         android:usesCleartextTraffic="false"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
         <activity
