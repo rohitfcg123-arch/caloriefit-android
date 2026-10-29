@@ -10,6 +10,7 @@ import android.webkit.JavascriptInterface
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
@@ -68,6 +69,9 @@ class MainActivity : ComponentActivity() {
         webView.overScrollMode = WebView.OVER_SCROLL_NEVER
         window.statusBarColor = android.graphics.Color.rgb(246, 249, 247)
         window.navigationBarColor = android.graphics.Color.WHITE
+        // Use dark system-bar icons on the light CalorieFit background.
+        window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or
+            View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
         webView.webChromeClient = WebChromeClient()
         webView.webViewClient = WebViewClient()
         webView.addJavascriptInterface(StepsBridge(), "CalorieFitNative")
