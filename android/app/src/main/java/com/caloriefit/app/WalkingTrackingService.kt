@@ -52,6 +52,10 @@ class WalkingTrackingService : Service(), SensorEventListener, LocationListener 
             ACTION_STOP -> stopTracking()
             ACTION_START -> startTracking()
             ACTION_REFRESH -> updateNotification()
+            null -> if (prefs.getBoolean("active", false)) {
+                startForeground(NOTIFICATION_ID, notification())
+                registerTrackers()
+            }
         }
         return START_STICKY
     }
